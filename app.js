@@ -34,12 +34,13 @@ app.use(morgan("tiny"));
 app.use(express.json()); //logs each request to the console
 app.use(cookieParser(process.env.JWT_SECRET));
 
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-  })
-);
+//Needed in local hosting
+// app.use(
+//   cors({
+//     origin: "http://localhost:5173",
+//     credentials: true,
+//   })
+// );
 
 //route initilsiation
 app.use("/api/v1/auth", authRouter);
