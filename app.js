@@ -42,6 +42,13 @@ app.use(cookieParser(process.env.JWT_SECRET));
 //   })
 // );
 
+app.use(
+  cors({
+    origin: ["https://espanolmaestro.com", "https://www.espanolmaestro.com"],
+    credentials: true,
+  })
+);
+
 //route initilsiation
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);
